@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour {
    anim.SetBool("is_walking", false);
   }
 
-  rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime);
+  rbody.MovePosition (rbody.position + movement_vector * Time.deltaTime *2f);
 
  }
 }
