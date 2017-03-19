@@ -7,28 +7,48 @@ public class QuestGiverController : MonoBehaviour {
 
     public Text questText;
 	public Transform warpTarget;
+	private int i;
+	public GameObject player;
+	public GameObject battleCamera;
 
+	private bool nextQuest;
+
+
+	string[] messages = new string[4] {"Hello, my name is Goku. Welcome to world of codecraft, i will be your guide!",
+		"To be able to take this quest, you need to bring a mate", "I see that you have a mate here already.",
+		" Do you want to start the quest now?"};
+	
 	// Use this for initialization
 	void Start () {
         questText.text = "";
+		nextQuest = false;
+		i = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown (KeyCode.Space) && nextQuest == true && i < messages.Length) {
+			questText.text = messages [i];
+			i++;
+		} else if (Input.GetKeyDown (KeyCode.Space) && nextQuest == true && i == messages.Length) {
+			player.transform.position = warpTarget.position;
+			Camera.main.transform.position = warpTarget.position;
+			Camera.main.enabled = false;
+			battleCamera.GetComponent<Camera>().enabled = true;
+		}
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            questText.text = "Hello, my name is Goku. Welcome to world of codecraft, i will be your guide!";
-            questText.gameObject.SetActive(true);
-
-			collision.gameObject.transform.position = warpTarget.position;
-			Camera.main.transform.position = warpTarget.position;
-
+        if (collision.gameObject.CompareTag("Player")){
+			nextQuest = true;
         }
     }
 
+	public void onTriggerExit2D(Collider2D collision) {
+		if (collision.gameObject.CompareTag ("Player")) {
+			nextQuest = false;
+		}
+	}
 }
