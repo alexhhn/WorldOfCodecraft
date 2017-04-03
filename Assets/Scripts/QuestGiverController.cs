@@ -14,9 +14,9 @@ public class QuestGiverController : MonoBehaviour {
 	private bool nextQuest;
 
 
-	string[] messages = new string[4] {"Hello, my name is Goku. Welcome to world of codecraft, i will be your guide!",
+	string[] messages = new string[4] {"Hello, my name is K'an. Welcome to world of codecraft, I will be your guide!",
 		"To be able to take this quest, you need to bring a mate", "I see that you have a mate here already.",
-		" Do you want to start the quest now?"};
+		"Do you want to start the quest now?"};
 	
 	// Use this for initialization
 	void Start () {
