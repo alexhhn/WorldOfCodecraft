@@ -82,6 +82,7 @@
 'Assets/Scripts/PlayerMovement.cs'
 'Assets/Scripts/QuestGiverController.cs'
 'Assets/Scripts/Reddragonscript.cs'
+'Assets/Scripts/WhitedragonController.cs'
 'Assets/Tiled2Unity/Scripts/Runtime/CircleObject.cs'
 'Assets/Tiled2Unity/Scripts/Runtime/ImportBehaviour.cs'
 'Assets/Tiled2Unity/Scripts/Runtime/Layer.cs'

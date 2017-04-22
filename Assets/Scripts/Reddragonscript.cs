@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Reddragonscript : MonoBehaviour {
 	public Sprite redDragon;
 	public Sprite frozenRedDragon;
+	public Sprite deadDragon;
+
 	public Button yourButton;
 
 	// Use this for initialization
@@ -19,6 +21,11 @@ public class Reddragonscript : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.F)) {
 			this.gameObject.GetComponent<SpriteRenderer>().sprite = frozenRedDragon;
+
+		}
+
+		if (Input.GetKeyDown (KeyCode.P)) {
+			this.gameObject.GetComponent<SpriteRenderer>().sprite = deadDragon;
 
 		}
 	}
